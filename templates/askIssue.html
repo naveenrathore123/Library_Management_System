@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+{% endblock head%}
+
+
+{% block title %}
+
+    Ask Issue
+
+{% endblock title %}
+
+{% block style %}
+
+    .glyphicon-user:before 
+    {
+        content: "\e136";
+    }
+
+    .glyphicon-log-in:before
+    {
+        content:"\e111"
+    }
+
+    .glyphicon-log-out:before
+    {
+        content:"\e111"
+    }
+
+{% endblock style %}
+
+
+{% block body %}
+
+
+    <div class="jumbotron jumbotron-fluid">
+
+        <div class="container">
+                
+            <h1>Hello</h1>  
+
+            <p>Tell Your Query !!!
+            </p>
+            
+        </div>
+        
+    </div>
+
+
+    <div class="container pb-5">
+
+        <form action="/need/askIssue" method="POST">
+
+            {% csrf_token %}
+            
+            <label class="checkbox">
+                <input type="checkbox" name="yes"> Already Serach your Book and Want to Issue that Book?
+            </label>
+
+            <br>
+
+            <label class="checkbox">
+                <input type="checkbox" name="no"> Not Searched your Book and Want to Issue the Book?
+            </label>
+
+            <br>
+
+            <button type="submit" class="btn btn-primary mt-1">Confirm</button>
+
+        </form>
+
+    </div>
+
+{% endblock body %}

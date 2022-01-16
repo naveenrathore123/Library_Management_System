@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+{% endblock head%}
+
+
+{% block title %}
+
+    Contact
+
+{% endblock title %}
+
+
+{% block style %}
+
+    .glyphicon-user:before 
+    {
+        content: "\e136";
+    }
+
+
+    .glyphicon-log-in:before
+    {
+        content:"\e111"
+    }
+
+    .glyphicon-log-out:before
+    {
+        content:"\e111"
+    }
+
+{% endblock style%}
+
+
+
+{% block body %}
+
+    <div class="jumbotron jumbotron-fluid">
+
+        <div class="container">
+                
+            <h1>Contact to Our Representatives</h1>  
+
+            <p>We are very happy to reach you!! Our team will shortly connect with you,
+                Please fill the form mentioned below... Thank you !!!
+            </p>
+            
+        </div>
+        
+    </div>
+
+    <div class="container pb-5">
+
+        <h2>Contact Form</h2>
+            
+        <form action="/contact" method="POST">
+
+            {% csrf_token %}
+
+            <div class="form-group pt-3">
+
+                <label for="usr">Name:</label>
+                <input type="text" class="form-control" id="usr" placeholder="Enter Name" name="name" required>
+                
+            </div>  
+
+            <div class="form-group">
+
+                <label for="phone">Phone:</label>
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="**********" pattern="[0-9]{10}" required>
+                
+            </div>
+
+            <div class="form-group">
+
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email" required>
+                
+            </div>
+
+            <div class="form-group">
+
+                <label for="comment">Comment:</label>
+                <textarea class="form-control" rows="5" id="comment" required placeholder="Text you Query" name="text"></textarea>
+                
+            </div>
+
+            <button type="submit" class="btn btn-success">Submit</button>
+            
+        </form>
+          
+    </div>
+          
+{% endblock body %}

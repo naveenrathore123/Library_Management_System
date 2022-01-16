@@ -1,0 +1,197 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+{% endblock head %}
+
+{% block title %}
+
+    Login
+
+{% endblock title %}  
+
+{% block style %}
+
+            .form-signin 
+            {
+                width: 100%;
+                max-width: 330px;
+                padding: 15px;
+                margin: auto;
+            }
+
+            .form-signin .checkbox 
+            {
+                font-weight: 400;
+            }
+
+            .form-signin .form-control 
+            {
+                position: relative;
+                box-sizing: border-box;
+                height: auto;
+                padding: 10px;
+                font-size: 16px;
+            }
+
+            .form-signin .form-control:focus 
+            {
+                z-index: 2;
+            }
+
+            .form-signin input[type="email"] 
+            {
+                margin-bottom: -1px;
+                border-bottom-right-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+
+            .form-signin input[type="password"] 
+            {
+                margin-bottom: 10px;
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+            }
+
+            .bd-placeholder-img 
+            {
+                font-size: 1.125rem;
+                text-anchor: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+            }
+
+            @media (min-width: 768px) 
+            {
+                .bd-placeholder-img-lg 
+                {
+                    font-size: 3.5rem;
+                }
+            }
+
+            .center 
+            {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 50%;
+            }
+
+            
+
+            .glyphicon-user:before 
+            {
+                content: "\e136";
+            }
+        
+            .glyphicon-log-in:before
+            {
+                content:"\e111"
+            }
+        
+            .glyphicon-log-out:before
+            {
+                content:"\e111"
+            }
+
+            .form-control 
+            {
+                width: 50%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 1px;
+                margin-bottom: 1px;
+            }
+
+            .myclass 
+            {
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            /* for messages */ 
+        .alert {
+        padding: 15px;
+        margin-bottom: 0px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+    }
+
+
+{% endblock style%}
+
+
+{% block body %}
+
+
+    {% if messages %}
+    {% for message in messages %}
+
+    <div class="alert alert-info">
+
+        <strong>{{ message }}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+
+    </div>
+
+    {% endfor %}
+    {% endif %}
+
+        <div class="form-signin, container pb-5 pt-5">
+
+            <form action="/accounts/login" method="POST">
+
+                {% csrf_token %}
+
+                <div class="container, text-center">
+                    <img class="text-center, mb-4" src="https://source.unsplash.com/1600x700/?registration" alt="Image Not Found" width="100" height="100">
+                </div> 
+    
+                <h1 class="h3 mb-3 fw-normal, text-center">Please sign in</h1>
+
+
+                
+                <div class="form-group">
+
+                    <label for="usr" class="visually-hidden">Username:</label>
+                    <input type="text" class="form-control" id="usr" placeholder="Username" name="username" required autofocus>
+                
+                </div> 
+
+                
+                <div class="form-group">
+
+                    <label for="inputPassword" class="visually-hidden">Password</label>
+                    <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required>
+                
+                </div>
+                      
+            
+                <div class="form-group, checkbox mt-2 mb-2, text-center">
+
+                    <label>
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                  
+                </div>
+                
+                <div class="myclass">
+                <button class="w-50 btn btn-lg btn-primary mt-2" type="submit">Sign in</button>
+            </div>
+
+                <p class="mt-5 mb-3 text-muted, text-center">&copy; copyright Naveen</p>
+
+            </form>
+
+        </div>
+
+
+{% endblock body %}

@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+{% endblock head %}
+
+
+{% block title %}
+        
+    Register
+        
+{% endblock title %}  
+
+
+{% block style %}
+
+    .glyphicon-user:before 
+    {
+        content: "\e136";
+    }
+
+    .glyphicon-log-in:before
+    {
+        content:"\e111"
+    }
+
+    .glyphicon-log-out:before
+    {
+        content:"\e111"
+    }
+
+    /* for messages */ 
+    .alert {
+        padding: 15px;
+        margin-bottom: 0px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+    }
+              
+{% endblock style%}
+        
+        
+{% block body %}
+
+    {% if messages %}
+    {% for message in messages %}
+
+    <div class="alert alert-warning">
+
+        <strong>{{ message }}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+
+    </div>
+
+    {% endfor %}
+    {% endif %}
+
+    <div class="container pb-5 pt-5">
+
+        <form action="/accounts/register" method="POST">
+
+            {% csrf_token %}
+
+            <div class="form-group">
+
+                <label for="usr">First Name:</label>
+                <input type="text" class="form-control" id="usr" placeholder="First Name" name="first_name" required>
+                
+            </div>
+                
+            <div class="form-group">
+
+                <label for="usr">Last Name:</label>
+                <input type="text" class="form-control" id="usr" placeholder="Last Name" name="last_name" required>
+                
+            </div> 
+
+            <div class="form-group">
+
+                <label for="usr">Roll Number:</label>
+                <input type="text" class="form-control" id="usr" placeholder="Eg:@@@" name="rollNumber" required>
+            
+            </div>
+
+            <div class="form-group">
+
+                <label for="usr">Username:</label>
+                <input type="text" class="form-control" id="usr" placeholder="Username" name="username" required>
+                
+            </div> 
+
+            <div class="form-group">
+
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email" required>
+                
+            </div>
+
+            
+            <div class="form-group">
+
+                <label for="phone">Phone:</label>
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="**********" pattern="[0-9]{10}" required>
+                
+            </div>
+
+            <div class="form-group">
+
+                <label for="inputPassword">Password:</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password1" required>
+                
+            </div>
+
+            <div class="form-group">
+
+                <label for="inputPassword">Confirm Password:</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Confirm Password" name="password2" required>
+                
+            </div>
+                
+            <button type="submit" class="btn btn-primary">Submit</button>
+                    
+        </form>
+        
+    </div>
+
+{% endblock body %}

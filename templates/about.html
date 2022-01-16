@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+{% endblock head %}
+
+{% block title %}
+
+    About
+
+{% endblock title %}
+
+{% block style %}
+
+    body{
+            position: relative; 
+        }
+
+    #section1 {padding-top:50px;height:500px;color: #fff; background-color: #1E88E5;}
+    #section2 {padding-top:50px;height:500px;color: #fff; background-color: #673ab7;}
+    #section3 {padding-top:50px;height:500px;color: #fff; background-color:  #32CD32;}
+    #section41 {padding-top:50px;height:500px;color: #fff; background-color: #00bcd4;}
+    #section42 {padding-top:50px;height:500px;color: #fff; background-color: #009688;}
+
+{% endblock style %}
+
+
+{% block body %}
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+            
+            <div class="container-fluid">
+
+                <div class="navbar-header">
+                    
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>                        
+                    
+                    </button>
+
+                    <a class="navbar-brand" href="/">Naveen's Library</a>
+                
+                </div>
+
+                <div>
+                    
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        
+                        <ul class="nav navbar-nav">
+                            
+                            <li><a href="#section1">Description</a></li>
+                            <li><a href="#section2">Profile</a></li>
+                            <li><a href="#section3">Connect</a></li>
+                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Section 4 <span class="caret"></span></a>
+                            
+                                <ul class="dropdown-menu">
+                                
+                                    <li><a href="#section41">Section 4-1</a></li>
+                                    <li><a href="#section42">Section 4-2</a></li>
+                            
+                                </ul>
+                            
+                            </li>
+                        </ul>
+                    
+                    </div>
+                
+                </div>
+            
+            </div>
+        
+        </nav>    
+
+        <div id="section1" class="container-fluid">
+        
+            <h1>Section 1</h1>
+            <p>The project “Library Management System” is developed in Python using MongoDB Database, 
+                which mainly focuses on basic operations in a library like adding new books, searching books, issue books, re-issue books and return books.
+            </p>
+        </div>
+        
+        <div id="section2" class="container-fluid">
+        
+            <h1>Section 2</h1>
+            <p>Name:- Naveen Rathore</p>
+            <p>Course:- B.Tech(Computer Science(2nd year))</p>
+            <p>Institute:- Indian Institute Of Information Technology, Nagpur</p>
+              
+        </div>
+        
+        <div id="section3" class="container-fluid">
+            
+            <h1>Section 3</h1>
+            
+            <p> Linkedin Profile:- <a href="https://www.linkedin.com/in/naveen-rathore-9309a71a2/">Click Here</a> </p>
+            <p> Instagram Profile:- <a href="https://www.instagram.com/_naveen_rathore/">Click Here</a> </p>
+
+        </div>
+        
+        <div id="section41" class="container-fluid">
+        
+            <h1>Section 4 Submenu 1</h1>
+            <p>Nothing is impossible, just do it</p>
+            
+        </div>
+        
+        <div id="section42" class="container-fluid">
+            
+            <h1>Section 4 Submenu 2</h1>
+            <p>Just move on!!!</p>
+            
+        </div>
+
+{% endblock body %}

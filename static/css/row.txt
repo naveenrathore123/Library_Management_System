@@ -1,0 +1,31 @@
+Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Stack(
+                  children: [
+                    IconButton(
+                      hoverColor: Colors.orange,
+                      onPressed: () {},
+                      icon: CircleAvatar(
+                        backgroundImage: NetworkImage(
+                            'https://th.bing.com/th/id/R66fa475cc378336d95d4340c398b60ff?rik=ebQSFDvg%2f22lkQ&riu=http%3a%2f%2f1000logos.net%2fwp-content%2fuploads%2f2018%2f01%2fpinterest-logo.png&ehk=xCq61bw9xQ794rxJUIkL%2b3W%2faXpdpS%2bRAlalKAn7%2fwM%3d&risl=&pid=ImgRaw'),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Stack(
+                  children: [
+                    IconButton(
+                      hoverColor: Colors.orange,
+                      onPressed: () {},
+                      icon: Icon(Icons.add_alert),
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
